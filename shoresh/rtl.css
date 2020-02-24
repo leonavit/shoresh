@@ -1,0 +1,47 @@
+/*
+Theme Name: shoresh
+
+Adding support for languages written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right-to-Left_Language_Support
+
+*/
+
+/*
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+*/
+.slicknav_menu li,.entry-header-catalog h1{text-align: right;}
+.catalog_price{text-align: left;background: red;}
+.slicknav_nav .slicknav_parent-link .slicknav_item{float: left;}
+.slicknav_menu .slicknav_menutxt ,div#gridwrapp ul li{float: right;}
+.slicknav_menu .slicknav_icon {float: left; margin: 0 0 0 0.438em;}
+#primary-menu > li:not(:first-of-type):after {right: 0;}
+.fullwrapp .widget-title:before {right: 0;}
+div#gridwrapp ul li {margin-left: 7px;margin-right: auto;}
+div#gridwrapp .new_menu_class  ul li:before{content: none;padding: 0;}
+div#gridwrapp .new_menu_class  ul li:after{content: '|';padding-right: 5px;font-size: 15px;font-weight: 100;}
+div#gridwrapp .new_menu_class  ul li:last-child:after{content:''}
+.main-navigation ul ul {float: left;position: absolute;top: 100%;right: -999em;left: auto; z-index: 99999;background: #000000;padding: 5px 5px;width: 100%;}
+ 
+.entry-header-catalog{
+grid-template-columns: 70% 30%;
+ }
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+right: 100%;
+}
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+right: auto;
+}
+
+@media screen and (min-width: 1024px) {
+    .main-navigation ul ul.focusopenenr{
+    right:auto;
+    }
+}
